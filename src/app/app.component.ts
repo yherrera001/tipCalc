@@ -27,5 +27,8 @@ export class AppComponent {
     this.priceChild.nativeElement.value = ''; //Here I can put whatever I want in the single quote to make it reset and then get a different placeholder
     this.tipPecentageChild.nativeElement.value = ''; //The native element means it is referring back to the htl and the .value means it is inserting the value that the elements in the html have
     this.peopleChild.nativeElement.value = '';
+    /* THIS IS DOM const priceElement = document.getElementById('price') as HTMLInputElement;
+    priceElement.value = '9000000000';
+  }*/
   }
 }
