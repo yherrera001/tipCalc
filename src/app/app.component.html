@@ -1,0 +1,35 @@
+<body>
+    <div class="alert alert-primary" role="alert" id="alertjawn"> <!--THIS IS MY BOOTSTRAP-->
+        This is an alert - TIP AND MAKE SURE YOU CLEAN FOR YOUR WAITRESS/WAITOR!
+      </div>
+    <div class="row">
+
+    </div> 
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10" id="app">
+
+<h1>Tip Calculator</h1>
+<div class="div">
+    <input #price id="price" type="text" name="" placeholder="How much is your meal?"> <!--the pound represents the variable that I could then use in component.ts-->
+    <input #tipPecentage id="tipPecentage" type="text" placeholder="What is your tip %?">
+    <input #people id="people" type="text" placeholder="How many people?">
+</div>
+
+<div> <!--HERE I AM CREATING MY BUTTONS!:)-->
+    <button type="reset" (click)="onReset()" value="Reset">Reset</button>
+    
+    <button class="calculate" (click)="calculate(price.value,tipPecentage.value,people.value)"><strong>Calculate</strong></button>
+</div> 
+
+<div>
+    <div *ngIf = "tipTotalPerPerson > 0" id=price> 
+        <br>
+        Tip Person: {{ tipTotalPerPerson | currency: 'USD'}}
+        Tip Total: {{ tipTotal | currency: 'USD'}}
+    </div>
+    <br>
+    <div *ngIf = "tipTotalPerPerson == 0" id=price> 
+    </div>
+</div>
+<router-outlet></router-outlet>
